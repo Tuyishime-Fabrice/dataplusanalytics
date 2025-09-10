@@ -27,7 +27,7 @@ if not st.session_state.logged_in:
         if pwd_input == PASSWORD:
             st.session_state.logged_in = True
             st.success("✅ Access granted")
-            st.experimental_rerun()
+            st.rerun()  # Changed from st.experimental_rerun() to st.rerun()
         else:
             st.error("❌ Incorrect password")
 else:
@@ -333,4 +333,7 @@ else:
             
             st.dataframe(course_breakdown, use_container_width=True, hide_index=True)
     # -------------------------
-    
+    # 🔹 Footer
+    # -------------------------
+    st.markdown("---")
+    st.markdown("📊 **Dashboard powered by Streamlit & Plotly** | Data updated in real-time from Supabase")
